@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Services - Professional Event Solutions</title>
+  <style>
+    /* Reset & Global Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; }
+    
+    /* Header */
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    .logo-container {
+      display: inline-block;
+      vertical-align: middle;
+      width: 80px;
+      margin-right: 10px;
+    }
+    .logo-container svg { width: 100%; height: auto; }
+    .header-text {
+      display: inline-block;
+      vertical-align: middle;
+      text-align: left;
+    }
+    .header-text h1 { font-size: 28px; margin-bottom: 5px; }
+    .header-text div { font-size: 16px; }
+    
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #003580;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: url('https://source.unsplash.com/1600x900/?event') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      color: white;
+      text-align: center;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero-content h2 { font-size: 48px; margin-bottom: 20px; }
+    .hero-content p { font-size: 20px; }
+    
+    /* About Section */
+    #about {
+      background: url('https://source.unsplash.com/1600x900/?corporate') no-repeat center center/cover;
+      color: white;
+      padding: 60px 20px;
+      position: relative;
+    }
+    #about::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
+    }
+    #about .content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Section Titles & Text */
+    section { padding: 40px 20px; text-align: center; }
+    section h2 { font-size: 32px; margin-bottom: 20px; color: #004aad; }
+    section p { font-size: 18px; margin-bottom: 20px; line-height: 1.6; }
+    
+    /* Services Section */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .service-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      width: 300px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .service-card h3 {
+      padding: 15px;
+      font-size: 22px;
+      color: #333;
+    }
+    
+    /* Contact Form */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .contact-form button {
+      padding: 10px 20px;
+      background-color: #004aad;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    /* WhatsApp Section */
+    .whatsapp-section {
+      margin-top: 30px;
+      padding: 30px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .whatsapp-section img {
+      width: 200px;
+      margin: 20px 0;
+    }
+    .whatsapp-section a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #004aad;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo-container">
+      <!-- Embedded SVG Logo (unique design) -->
+      <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="gradientC" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#29ABE2"/>
+            <stop offset="100%" stop-color="#2f9d98"/>
+          </radialGradient>
+        </defs>
+        <path d="M 200,75 A 75,75 0 0 0 200,225" stroke="url(#gradientC)" stroke-width="30" fill="none" stroke-linecap="round" transform="translate(-50,0)"/>
+        <g transform="translate(150,150) rotate(0) translate(0,-100)">
+          <circle cx="0" cy="0" r="10" fill="#F15A29" />
+          <path d="M -15,10 Q 0,30 15,10" fill="none" stroke="#F15A29" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(150,150) rotate(72) translate(0,-100)">
+          <circle cx="0" cy="0" r="10" fill="#FFC20E" />
+          <path d="M -15,10 Q 0,30 15,10" fill="none" stroke="#FFC20E" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(150,150) rotate(144) translate(0,-100)">
+          <circle cx="0" cy="0" r="10" fill="#6BB343" />
+          <path d="M -15,10 Q 0,30 15,10" fill="none" stroke="#6BB343" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(150,150) rotate(216) translate(0,-100)">
+          <circle cx="0" cy="0" r="10" fill="#29ABE2" />
+          <path d="M -15,10 Q 0,30 15,10" fill="none" stroke="#29ABE2" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <g transform="translate(150,150) rotate(288) translate(0,-100)">
+          <circle cx="0" cy="0" r="10" fill="#8A2BE2" />
+          <path d="M -15,10 Q 0,30 15,10" fill="none" stroke="#8A2BE2" stroke-width="5" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+    <div class="header-text">
+      <h1>Community Services</h1>
+      <div>Your Trusted Partner for Event Staffing & Logistics</div>
+    </div>
+  </header>
+  
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="#services">Our Services</a>
+    <a href="#contact">Contact</a>
+    <a href="#whatsapp">Join WhatsApp Group</a>
+  </nav>
+  
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome to Community Services</h2>
+      <p>We make your events extraordinary with our professional event services</p>
+    </div>
+  </section>
+  
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <div class="content">
+      <h2>About Community Services</h2>
+      <p>
+        We provide professional event services including hostesses, bouncers, volunteers, artists, logistics, hospitality, and shadow assistance to ensure your events are successful.
+      </p>
+    </div>
+  </section>
+  
+  <!-- SERVICES SECTION -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <img src="https://source.unsplash.com/300x200/?hostess" alt="Hostesses">
+        <h3>Hostesses</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://source.unsplash.com/300x200/?bouncer" alt="Bouncers">
+        <h3>Bouncers</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://source.unsplash.com/300x200/?volunteer" alt="Volunteers">
+        <h3>Volunteers</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://source.unsplash.com/300x200/?artist" alt="Artists">
+        <h3>Artists</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://source.unsplash.com/300x200/?logistics" alt="Logistics">
+        <h3>Logistics</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://source.unsplash.com/300x200/?hospitality" alt="Hospitality">
+        <h3>Hospitality</h3>
+      </div>
+      <div class="service-card">
+        <img src="https://source.unsplash.com/300x200/?shadow" alt="Shadow Assistance">
+        <h3>Shadow Assistance</h3>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CONTACT SECTION -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>You can reach us at <strong>communityservices888@gmail.com</strong></p>
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="tel" placeholder="Your Phone Number" required>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+  
+  <!-- WHATSAPP SECTION -->
+  <section id="whatsapp">
+    <h2>Join Our WhatsApp Group</h2>
+    <div class="whatsapp-section">
+      <p>Scan the QR code below or click the button to join our official WhatsApp group.</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://wa.me/916362294696" alt="Join WhatsApp Group">
+      <br>
+      <a href="https://wa.me/916362294696" target="_blank">Join via WhatsApp Link</a>
+    </div>
+  </section>
+  
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Community Services. All Rights Reserved.
+  </footer>
+</body>\
